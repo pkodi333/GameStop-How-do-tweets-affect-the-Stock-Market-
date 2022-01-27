@@ -22,6 +22,6 @@ b. If the compound score <= -0.05, then the sentiment is negative
 
 c. If the compound score < 0.05 and > -0.05, then the sentiment is neutral
 
-Then I compared each day's opening price with the number of positive tweets to see if the number of positive tweets increased with respect to previous day and there was an increase in opening price with respect to previous day. Result: In less than half of the occasions, the tweet sentiment reflected the next day's stock movement.
+Observation: In less than half of the occasions, the tweet sentiment reflected the next day's stock movement.
 
-We cannot conclusively state that the positive sentiment in twitter led to increase in stock prices because there are many other external factors involved which drive the stock price movement, but we can use this analysis in a more directional and indicative manner. This cannot be used as a tool for long term investments.
+We can't conclude that positive sentiment in twitter leads to increase in stock prices as there are many other external factors involved affecting the stock price movement, but this analysis can be used as manner of direction and not as a tool for long term investments.
