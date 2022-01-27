@@ -17,7 +17,9 @@ According to our topic modeling for the Post period, it is observed that the fre
 Using the SentimentIntensityAnalyzer from VADER, we can check whether the tweet has a positive, negative, or neutral sentiment and the score tells us the intensity. 
 
 a. If the compound score >= 0.05, then the sentiment is positive
+
 b. If the compound score <= -0.05, then the sentiment is negative
+
 c. If the compound score < 0.05 and > -0.05, then the sentiment is neutral
 
 Then I compared each day's opening price with the number of positive tweets to see if the number of positive tweets increased with respect to previous day and there was an increase in opening price with respect to previous day. Result: In less than half of the occasions, the tweet sentiment reflected the next day's stock movement.
