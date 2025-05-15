@@ -1,27 +1,92 @@
 # GameStop-How-do-tweets-affect-the-Stock-Market-
 
-GameStop became a poster child for meme stock Trade as there was a 1600% rally in stock price. Thus, it became influential for the common man to invest in it.
- 
-In this project, I did the following:
-Analyzed how twitter reacted to the frenzy and got insights on the shift in sentiment 
-Analyzed if the shift in sentiment is impacts stock price movement or not for the next day
+GameStop became the poster child of the meme stock movement in early 2021, with a 1600% rally that caught Wall Street by surprise. This project investigates whether Twitter sentiment had any measurable influence on GameStop’s stock price and if social media hype could be used as an early signal for price movement.
 
-LDA was used for topic modeling and VADER for the sentiment analysis.
+We use **VADER** for sentiment analysis and **LDA** for topic modeling on tweets that mention `#GME` or `#GameStop` from different time periods (Pre-hype, Hype, and Post-hype) to explore changes in public sentiment and their potential correlation with daily stock price movements.
 
-I extracted the tweets with hashtags GME and GameStop time periods i.e., Oct'20-Dec'20 (Pre), Jan'21-Mar'21 (frenzy period) and Apr'21-Sep'21 (Post) using snscraper.
+---
 
-I cleaned the data by removing punctuations, URLs, hyperlinks, emojis, stopwords and frequently appearing collection of words (ex: gamestop, gme, game,  ps5, xbox etc.) I obtained the individual words from the sentences with lemmatization.
+## 🧪 Objective
 
-According to our topic modeling for the Post period, it is observed that the frenzy related to the GameStop as a memestock slowly started dying down and the stock price may start stabilizing.
+- Analyze how Twitter sentiment shifted before, during, and after the GameStop frenzy
+- Evaluate if sentiment on Twitter can help predict next-day stock price movement
 
-Using the SentimentIntensityAnalyzer from VADER, we can check whether the tweet has a positive, negative, or neutral sentiment and the score tells us the intensity. 
+---
 
-a. If the compound score >= 0.05, then the sentiment is positive
+## 📊 Data Collection
 
-b. If the compound score <= -0.05, then the sentiment is negative
+- Tweets were extracted using `snscrape` with hashtags `#GME` and `#GameStop`
+- Time periods analyzed:
+  - **Pre-Hype**: Oct 2020 – Dec 2020
+  - **Hype Period**: Jan 2021 – Mar 2021
+  - **Post-Hype**: Apr 2021 – Sep 2021
 
-c. If the compound score < 0.05 and > -0.05, then the sentiment is neutral
+---
 
-Observation: In less than half of the occasions, the tweet sentiment reflected the next day's stock movement.
+## 🔧 Tools & Libraries
 
-We can't conclude that positive sentiment in twitter leads to increase in stock prices as there are many other external factors involved affecting the stock price movement, but this analysis can be used as manner of direction and not as a tool for long term investments.
+- Python (Pandas, NumPy, Matplotlib, Seaborn, NLTK, Gensim)
+- VADER (Sentiment Analysis)
+- LDA (Topic Modeling)
+- snscrape (Twitter scraping)
+
+---
+
+## 🧹 Data Cleaning
+
+- Removed:
+  - Punctuation
+  - URLs and hyperlinks
+  - Emojis and HTML tags
+  - Stopwords and high-frequency terms (e.g., "gamestop", "game", "ps5", "xbox")
+- Applied lemmatization to normalize text
+
+---
+
+## 🗣️ Sentiment Analysis
+
+Used VADER's `SentimentIntensityAnalyzer` to classify sentiment:
+
+- **Positive**: Compound score ≥ 0.05  
+- **Negative**: Compound score ≤ -0.05  
+- **Neutral**: -0.05 < Compound score < 0.05  
+
+Daily average sentiment was compared to next-day stock price movement to assess correlation.
+
+---
+
+## 🧵 Topic Modeling
+
+Used **Latent Dirichlet Allocation (LDA)** to identify tweet topics:
+
+- During the **Post-Hype** period, results showed a clear drop-off in meme-related or hype-driven language.
+- Indicates waning public attention and normalization of GameStop stock discussions.
+
+---
+
+## 📈 Results & Observations
+
+- In **less than half** of the cases, Twitter sentiment aligned with next-day stock price movement.
+- Sentiment shifted significantly during the Hype phase, driven by FOMO, short squeeze narratives, and retail investor solidarity.
+- Post-Hype tweets became more rational and less speculative.
+
+---
+
+## 🤔 Conclusion
+
+While Twitter sentiment showed **some directional clues**, it did **not reliably predict next-day price movement**. Market behavior is influenced by numerous external variables—this analysis serves more as a **social signal tracker** than a forecasting tool.
+
+> 📝 **Takeaway**: Use sentiment as a supporting indicator, not a standalone investment strategy.
+
+---
+
+## 📎 Future Improvements
+
+- Incorporate Reddit sentiment (e.g., r/WallStreetBets)
+- Explore lagged sentiment effects over 3–5 days
+- Integrate volume and volatility indicators for stronger modeling
+
+---
+
+## 📁 Repository Structure
+
