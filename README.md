@@ -86,7 +86,4 @@ While Twitter sentiment showed **some directional clues**, it did **not reliably
 - Explore lagged sentiment effects over 3–5 days
 - Integrate volume and volatility indicators for stronger modeling
 
----
-
-## 📁 Repository Structure
 
